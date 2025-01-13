@@ -155,7 +155,7 @@ body {
   .search-box{
     position: relative;
     height: 40px;
-    width: 50px;
+    width: 70px;
     border-radius: 50%;
    
     transition: all 0.5s ease-in-out;
