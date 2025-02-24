@@ -1,0 +1,75 @@
+ 
+    <!DOCTYPE html>
+    <html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Đăng Nhập - 3AE STORE</title>
+        <link rel="stylesheet" href="style.css"> <!-- Liên kết file CSS -->
+    </head>
+    <body>
+        <header>
+            <h1>Đăng Nhập</h1>
+        </header>
+    
+        <div id="login-form">
+            <h2>Đăng Nhập</h2>
+            <form onsubmit="return checkLogin(event)">
+                <label for="username">Tên đăng nhập:</label>
+                <input type="text" id="username" name="username" required><br><br>
+                
+                <label for="password">Mật khẩu:</label>
+                <input type="password" id="password" name="password" required><br><br>
+                
+                <button type="submit">Đăng Nhập</button>
+            </form>
+            <button onclick="goBack()">Quay lại</button>
+        </div>
+    
+        <footer>
+            <p>&copy; 2025 3AE STORE - Mỹ Phẩm Chính Hãng</p>
+        </footer>
+    
+        <script>
+            function checkLogin(event) {
+                event.preventDefault(); // Ngăn form gửi đi
+    
+                // Lấy giá trị nhập vào
+                let username = document.getElementById("username").value;
+                let password = document.getElementById("password").value;
+    
+                // Kiểm tra thông tin đăng nhập
+                if (username === "3aestore" && password === "banhangchinhhang") {
+                    alert("Đăng nhập thành công!");
+                    window.location.href = "index.html"; // Chuyển đến trang chủ
+                } else {
+                    alert("Sai tên đăng nhập hoặc mật khẩu!");
+                }
+            }
+    
+            function goBack() {
+                window.history.back(); // Quay lại trang trước
+            }
+        </script>
+        <style>
+        #login-form button {
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        #login-form button:hover {
+            background: #218838;
+        }
+        #login-form button:last-child {
+            background: #dc3545;
+        }
+        #login-form button:last-child:hover {
+            background: #c82333;
+        }</style>
+    </body>
+    </html>

@@ -1,68 +1,229 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3AE STORE</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-
-
+    <title>Shop 3AE - Mỹ Phẩm Chính Hãng</title>
+    <link rel="stylesheet" href="style.css"> <!-- Liên kết file CSS -->
 </head>
-
-
 <body>
-    <nav class="navbar">
-        <div class="logo">3AE STORE</div>
-        <ul class="menu">
-            <li><a href="#">Trang chủ</a></li>
-            <li class="dropdown">
-                <a href="#">Sản phẩm</a>
-                <ul class="submenu">
-                    <li><a href="#">Sản phẩm 1</a></li>
-                    <li><a href="#">Sản phẩm 2</a></li>
-                    <li><a href="#">Sản phẩm 3</a></li>
-                    <li><a href="#">Sản phẩm 4</a></li>
-                </ul>
-            </li>
-           
-            <li class="dropdown">
-                <a href="#">Giới thiệu</a>
-                <ul class="submenu">
-                    <li><a href="#">phòng giám đốc</a></li>
-                    <li><a href="#">Phòng tài chính</a></li>
-                    <li><a href="#">Phòng Nhân sự</a></li>                
-                </ul>
-            </li> 
-            <li><a href="#">Liên hệ</a></li>
-            <div class="search-box">
-      <input type="text" placeholder="Type to search..">
-      <div class="search-icon">
-        <i class="fas fa-search"></i>
-      </div>
 
-<div class="search-data"></div>
-        
+    <!-- Header -->
+    <header>Shop 3AE - Mỹ Phẩm Chính Hãng</header>
+    <nav>
+    <ul>
+            <li><a href="index.html">Trang Chủ</a></li>
+            <li><a href="contact.html">Liên Hệ</a></li>
+            <li><a href="login.html">Login</a></li>
+        <li class="dropdown">
+            <a href="#" id="sanphamLink">Sản phẩm ▼</a> <!-- Click vào sẽ mở trang -->
+        <ul class="dropdown-content">
+            <li><a href="#"data-link="kem-phuc-hoi.html">Kem Phục Hồi</a></li>
+            <li><a href="#"data-link="serum-b5.html">Serum B5</a></li>
+            <li><a href="#"data-link="cham-mun.html">Chấm mụn</a></li>
         </ul>
-        <div class="menu-icon">☰</div>
-       
-    </nav>
-    <style>
-        body {
-            height: 100vh;
-            margin: 0;
-            background: linear-gradient(45deg, #ff6ec7, #ff9a8b, #ff9f43);
-            background-size: 400% 400%;
-            animation: gradientBackground 5s ease infinite;
-        }
+        </li>
+    </ul>
+    </nav>   
+   
+<style>
+    /* Thanh nav */
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        background-color: #333;
+        padding: 10px;
+    }
 
-        @keyframes gradientBackground {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+    /* Link trong menu */
+    nav a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 15px;
+        display: block;
+    }
+
+    /* Dropdown */
+    .dropdown {
+        position: relative;
+    }
+
+    /* Nội dung dropdown (ẩn ban đầu) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 150px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        top: 100%;
+        left: 0;
+    }
+
+    /* Link trong dropdown */
+    .dropdown-content a {
+        color: black;
+        padding: 10px;
+        display: block;
+    }
+
+    /* Hiện dropdown khi hover */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    /* Hiệu ứng hover */
+    nav a:hover, .dropdown-content a:hover {
+        background-color: #575757;
+        color: white;
+    }
+</style>
+
+    <style>
+        /* Thanh nav */
+        nav {
+            display: flex;
+            justify-content: center; /* Căn giữa */
+            align-items: center;
+            gap: 20px;
+            background-color: #333;
+            padding: 10px;
+        }
+    
+        /* Link trong menu */
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+    
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+    
+        /* Nội dung dropdown (ẩn ban đầu) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 150px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            top: 100%;
+            left: 0;
+        }
+    
+        /* Link trong dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 10px;
+            display: block;
+        }
+    
+        /* Hiện dropdown khi hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    
+        /* Hiệu ứng hover */
+        nav a:hover, .dropdown-content a:hover {
+            background-color: #575757;
+            color: white;
         }
     </style>
-            
+   
+
+    <div class="container">
+        <h2>Danh Sách Sản Phẩm</h2>
+        <div class="product-list">
+            <div class="product">
+                <h3>Kem Chấm Mụn</h3>
+                <img src="images/z6321935845015_a6a016997dbb2db35378455ff9b80a34.jpg" alt="Kem Chấm Mụn">
+                <p>Giúp giảm mụn, mờ thâm hiệu quả.</p>
+                <p class="price">Giá: 255.000đ</p>
+                <button class="order-btn" onclick="order('Kem Chấm Mụn')">Đặt Mua</button>
+            </div>
+
+            <div class="product">
+                <h3>Serum Phục Hồi B5</h3>
+                <img src="images/serum_b5/z6321724539916_6e2a9db3ae43d2536d66506715dc660d.jpg" alt="Serum B5">
+                <p>Giúp phục hồi da, cấp ẩm sâu.</p>
+                <p class="price">Giá: 250.000đ</p>
+                <button class="order-btn" onclick="order('Serum Phục Hồi B5')">Đặt Mua</button>
+            </div>
+
+            <div class="product">
+                <h3>Kem Face Phục Hồi</h3>
+                <img src="images/kem_face/z6321935834175_85503630205dc6ce7237d3393cbb720a.jpg" alt="Kem Face Phục Hồi">
+                <p>Dưỡng da, khóa ẩm, giảm thâm.</p>
+                <p class="price">Giá: 350.000đ</p>
+                <button class="order-btn" onclick="order('Kem Face Phục Hồi')">Đặt Mua</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Danh sách hình ảnh -->
+    <div class="container">
+        <h2>Hình Ảnh Sản Phẩm</h2>
+        <!-- <div class="gallery">
+            <img src="images/z6321935845015_a6a016997dbb2db35378455ff9b80a34.jpg" alt="Kem Chấm Mụn" onclick="showProductImages('acne')">
+            <img src="images/z6321935839139_708f91fc6af6c2aeccdfd93c5e82e399.jpg" alt="Serum B5" onclick="showProductImages('serum')">
+            <img src="images/z6321935834175_85503630205dc6ce7237d3393cbb720a.jpg" alt="Kem Face Phục Hồi"  onclick="showProductImages('face')">
+        </div> -->
+    </div>
+<section>
+    
+    <div class="product-list">
+        <div class="product">
+            <h3>Kem Chấm Mụn</h3>
+            <img src="images/z6321935845015_a6a016997dbb2db35378455ff9b80a34.jpg" alt="Kem Chấm Mụn" onclick="showProductImages('acne')">   
+        </div>
+
+        <div class="product">
+            <h3>Serum Phục Hồi B5</h3>
+            <img src="images/serum_b5/z6321724539916_6e2a9db3ae43d2536d66506715dc660d.jpg" alt="Serum B5" onclick="showProductImages('serum')">
+        </div>
+
+        <div class="product">
+            <h3>Kem Face Phục Hồi</h3>
+            <img src="images/kem_face/z6321724546862_0ab6efd5645e8b521ea2a69c0f6eb6ff.jpg" alt="Kem Face Phục Hồi"  onclick="showProductImages('face')">           
+        </div>
+    </div>
+
+<!-- Hiển thị ảnh chi tiết -->
+<section id="product-images" class="hidden">
+    <h2>Chi Tiết Sản Phẩm</h2>
+    <div id="image-container"></div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+         <div id="footer">
+            <div class="a1">
+              <h4>Thông tin liên hệ</h4>
+              <p>Hotline: 0987 654 321</p>
+            </div>
+            <div class="a2">
+              <h4>Địa chỉ</h4>
+              <p>vincom Dĩ An, TP.Dĩ An, Bình Dương</p>
+            </div>
+            <div class="a3">
+              <h4>Thông tin khác</h4>
+              <a href="#">Facebook</a><br />
+              <a href="#">TikTok</a><br />
+              <a href="#">Instagram</a>
+            </div>
+          </div>
+    </footer>
+    <script src="script.js"></script>
+    
+   
 </body>
 </html>
+ 
+    
+
+  
+    
