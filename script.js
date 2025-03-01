@@ -14,8 +14,8 @@ function showProductImages(product) {
     // Danh sách hình ảnh theo sản phẩm
     let images = {
         "acne": ["images/cham_mun/mun_1.jpg", "images/cham_mun/mun_2.jpg", "images/cham_mun/mun_3.jpg"],
-        "serum": ["images/serum_b5/z6321724539916_6e2a9db3ae43d2536d66506715dc660d.jpg", "images/serum_b5/z6321724610541_829c2a264669f59e08f171a656c1dfd9.jpg", "images/serum_b5/z6321935839139_708f91fc6af6c2aeccdfd93c5e82e399.jpg"],
-        "face": ["images/kem_face/z6321724546862_0ab6efd5645e8b521ea2a69c0f6eb6ff.jpg", "images/kem_face/z6321724607673_89c384f049ad415dc5ce44e55cc7b8de - Copy.jpg", "images/kem_face/z6321724607673_89c384f049ad415dc5ce44e55cc7b8de.jpg"]
+        "serum": ["images/serum_b5/b5_3.jpg", "images/serum_b5/b5_4.jpg", "images/serum_b5/b5_5.jpg"],
+        "face": ["images/kem_face/face_8.jpg", "images/kem_face/face_4.jpg", "images/kem_face/face_5.jpg"]
     };
 
     // Thêm ảnh mới vào container

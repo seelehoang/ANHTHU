@@ -143,23 +143,6 @@ footer {
   display: flex;
     justify-content: center;
 }
-
-button {
-    background: #e60000;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    max-width: 150px; /* Giới hạn chiều rộng */
-    text-align: center;
-    transition: background 0.3s ease-in-out;
-    white-space: nowrap; /* Không xuống dòng */
-    overflow: hidden;
-    display: inline-block;
-    border-radius: 20px;
-}
-
 button:hover {
     background: black;
 }
@@ -173,14 +156,6 @@ html, body {
     font-family: Arial, sans-serif;
     text-align: center;
 }
-
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-    }
-
     .button-container {
     margin-top: 20px;
   display: flex;
