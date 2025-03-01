@@ -1,11 +1,28 @@
-// Hiển thị thông báo khi nhấn "Mua ngay"
-function showThankYou(button) {
-    let price = button.getAttribute("data-price"); // Lấy giá từ data-price
-    alert(`🎉 Cảm ơn bạn đã mua hàng! Giá sản phẩm: ${price}`);
-}
 document.addEventListener("DOMContentLoaded", function () {
-    let containers = document.querySelectorAll(".image-container");
+    // Lọc sản phẩm theo giá
+    document.getElementById("priceFilter").addEventListener("change", function () {
+        let selectedPrice = this.value;
+        let products = document.querySelectorAll(".image-container");
 
+        products.forEach(product => {
+            let price = parseInt(product.getAttribute("data-price"));
+
+            // Hiển thị tất cả nếu chọn "Tất cả", hoặc lọc theo giá
+            if (selectedPrice === "all" || price <= parseInt(selectedPrice)) {
+                product.style.display = "block";
+            } else {
+                product.style.display = "none";
+            }
+        });
+    });
+
+    // Hiển thị thông báo khi nhấn "Mua ngay"
+    window.showThankYou = function (price) {
+        alert(`🎉 Cảm ơn bạn đã mua hàng! Giá sản phẩm: ${price.toLocaleString()}đ`);
+    };
+
+    // Xử lý sự kiện trên di động (hiệu ứng chạm)
+    let containers = document.querySelectorAll(".image-container");
     containers.forEach((container) => {
         container.addEventListener("touchstart", function () {
             this.classList.add("hover-effect");
@@ -15,16 +32,17 @@ document.addEventListener("DOMContentLoaded", function () {
             this.classList.remove("hover-effect");
         });
     });
+
+    // Xử lý nút quay lại
+    let backButton = document.getElementById("backButton");
+    if (backButton) {
+        backButton.addEventListener("click", function () {
+            let previousPage = localStorage.getItem("previousPage");
+            if (previousPage && previousPage !== window.location.href) {
+                window.location.href = previousPage;
+            } else {
+                window.location.href = "index.html";
+            }
+        });
+    }
 });
- // Xử lý nút quay lại
- let backButton = document.getElementById("backButton");
- if (backButton) {
-     backButton.addEventListener("click", function () {
-         let previousPage = localStorage.getItem("previousPage");
-         if (previousPage && previousPage !== window.location.href) {
-             window.location.href = previousPage; // Quay lại trang trước
-         } else {
-             window.location.href = "index.html"; // Nếu không có trang trước, quay về Trang Chủ
-         }
-     });
- }

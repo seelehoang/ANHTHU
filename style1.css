@@ -1,14 +1,4 @@
 
-.image-grid{
-    flex: 1; /* Đẩy footer xuống dưới */
-}
-
-.footer {
-    background-color: #222; /* Màu nền */
-    color: white;
-    text-align: center;
-    padding: 15px;
-}/* Reset mặc định */
 * {
     margin: 0;
     padding: 0;
@@ -31,6 +21,7 @@ header {
     grid-template-columns: repeat(5, minmax(200px, 1fr));
     gap: 20px;
     padding: 20px;
+    
 }
 
 /* Hộp sản phẩm */
@@ -87,13 +78,6 @@ header {
     transform: scale(1.1);
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 10px;
-    background: #222;
-    color: white;
-}
 /* Thiết lập mặc định */
 .image-grid {
     display: grid;
@@ -121,18 +105,12 @@ footer {
         text-align: center;
     }
 
-    .footer {
-        font-size: 14px; /* Thu nhỏ footer */
-        padding: 10px;
-    }
-
     .image-container {
         max-width: 90%; /* Thu nhỏ sản phẩm cho vừa màn hình */
         margin: auto;
     }
 }
-/* Hiệu ứng hover bình thường */
-.image-container:hover,
+/* Hiệu ứng hover bình thường */s
 .image-container.hover-effect {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -180,4 +158,68 @@ button {
 
 button:hover {
     background: black;
+}
+/* Bộ lọc giá - làm đẹp và responsive */
+.filter-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ff6666; /* Màu nền đỏ nhẹ */
+    padding: 10px 20px;
+    border-radius: 8px; /* Bo góc */
+    max-width: 100%; /* Đảm bảo không bị tràn */
+    width: 300px; /* Kích thước mặc định */
+    margin: 20px auto; /* Căn giữa */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Nhãn "Lọc theo giá" */
+.filter-container label {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    margin-right: 10px;
+    white-space: nowrap; /* Không bị xuống dòng */
+}
+
+/* Dropdown (Select) */
+.filter-container select {
+    font-size: 14px;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    background: white;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng hover */
+.filter-container select:hover {
+    background: #ffe6e6;
+}
+
+/* Hiệu ứng khi click */
+.filter-container select:focus {
+    border: 2px solid #ff3333;
+}
+
+/* Responsive cho màn hình nhỏ */
+@media (max-width: 480px) {
+    .filter-container {
+        flex-direction: column; /* Xếp dọc */
+        width: 90%; /* Chiếm hết chiều rộng */
+        padding: 12px;
+    }
+
+    .filter-container label {
+        margin-bottom: 5px;
+        text-align: center;
+    }
+
+    .filter-container select {
+        width: 100%; /* Chiếm hết khung */
+        text-align: center;
+    }
 }
