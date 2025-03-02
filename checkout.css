@@ -1,0 +1,188 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Background và bố cục tổng thể */
+body {
+    background-color: #f8f8f8;
+    color: #333;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    background-color: #d32f2f;
+    color: white;
+    padding: 15px 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Giỏ hàng */
+#cart-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+/* Bảng sản phẩm */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #d32f2f;
+    color: white;
+}
+
+td img {
+    width: 50px;
+}
+
+/* Nút tăng/giảm số lượng */
+button {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Nút Xóa */
+.remove {
+    background-color: #ff0000;
+    color: white;
+}
+
+.remove:hover {
+    background-color: #cc0000;
+}
+
+/* Tổng tiền */
+#cart-total {
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* Form thanh toán */
+#checkout-form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+#checkout-form h2, #checkout-form h3 {
+    color: #d32f2f;
+    margin-bottom: 15px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Phương thức thanh toán */
+label {
+    display: block;
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+/* Nút quay lại & thanh toán */
+.checkout-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#back-button, #checkout-button {
+    width: 48%;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#back-button {
+    background-color: #666;
+    color: white;
+}
+
+#back-button:hover {
+    background-color: #444;
+}
+
+#checkout-button {
+    background-color: #d32f2f;
+    color: white;
+}
+
+#checkout-button:hover {
+    background-color: #b71c1c;
+}
+
+/* Mobile (màn hình nhỏ dưới 768px) */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+  .menu {
+    display: block;
+    text-align: center;
+  }
+}
+
+/* Tablet (từ 768px đến 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+  .container {
+    width: 90%;
+  }
+}
+
+/* Desktop (trên 1024px) */
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+  .container {
+    width: 80%;
+    max-width: 1200px;
+  }
+}
+

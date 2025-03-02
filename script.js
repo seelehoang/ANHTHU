@@ -4,32 +4,89 @@ function order(item) {
 function showAllProducts() {
     alert("Hiển thị toàn bộ sản phẩm!");
 }
+// function showProductImages(product) {
+//     let imageContainer = document.getElementById("image-container");
+//     let productImagesSection = document.getElementById("product-images");
+
+//     // Xóa ảnh cũ nếu có
+//     imageContainer.innerHTML = "";
+
+//     // Danh sách hình ảnh theo sản phẩm
+//     let images = {
+//         "acne": ["images/cham_mun/mun_1.jpg", "images/cham_mun/mun_2.jpg", "images/cham_mun/mun_3.jpg"],
+//         "serum": ["images/serum_b5/b5_3.jpg", "images/serum_b5/b5_4.jpg", "images/serum_b5/b5_5.jpg"],
+//         "face": ["images/kem_face/face_8.jpg", "images/kem_face/face_4.jpg", "images/kem_face/face_5.jpg"]
+//     };
+    
+
+//     // Thêm ảnh mới vào container
+//     if (images[product]) {
+//         images[product].forEach(img => {
+//             let imgElement = document.createElement("img");
+//             imgElement.src = img;
+//             imgElement.alt = "Chi tiết sản phẩm";
+//             imageContainer.appendChild(imgElement);
+//         });
+
+//         // Hiển thị phần hình ảnh
+//         productImagesSection.classList.remove("hidden");
+//     }
+// }
 function showProductImages(product) {
     let imageContainer = document.getElementById("image-container");
     let productImagesSection = document.getElementById("product-images");
+
+    if (!imageContainer || !productImagesSection) {
+        console.error("Không tìm thấy phần tử chứa hình ảnh.");
+        return;
+    }
 
     // Xóa ảnh cũ nếu có
     imageContainer.innerHTML = "";
 
     // Danh sách hình ảnh theo sản phẩm
     let images = {
-        "acne": ["images/cham_mun/mun_1.jpg", "images/cham_mun/mun_2.jpg", "images/cham_mun/mun_3.jpg"],
-        "serum": ["images/serum_b5/b5_3.jpg", "images/serum_b5/b5_4.jpg", "images/serum_b5/b5_5.jpg"],
-        "face": ["images/kem_face/face_8.jpg", "images/kem_face/face_4.jpg", "images/kem_face/face_5.jpg"]
+        "acne": ["images/cham_mun/mun_1.jpg", "images/cham_mun/mun_3.jpg"],
+        "serum": ["images/serum_b5/b5_5.jpg"],
+        "face": ["images/kem_face/face_8.jpg", "images/kem_face/face_5.jpg"]
     };
 
-    // Thêm ảnh mới vào container
+    // Kiểm tra sản phẩm có ảnh không
     if (images[product]) {
         images[product].forEach(img => {
             let imgElement = document.createElement("img");
             imgElement.src = img;
             imgElement.alt = "Chi tiết sản phẩm";
+            imgElement.classList.add("zoomable"); // Thêm class zoomable
+            imgElement.onclick = function() {
+                zoomImage(this);
+            };
             imageContainer.appendChild(imgElement);
         });
 
         // Hiển thị phần hình ảnh
         productImagesSection.classList.remove("hidden");
+    } else {
+        console.error("Không tìm thấy hình ảnh cho sản phẩm:", product);
     }
+}
+
+// Hàm phóng to ảnh khi click vào
+function zoomImage(img) {
+    let overlay = document.createElement("div");
+    overlay.classList.add("image-overlay");
+
+    let zoomedImg = document.createElement("img");
+    zoomedImg.src = img.src;
+    zoomedImg.classList.add("zoomed-image");
+
+    overlay.appendChild(zoomedImg);
+    document.body.appendChild(overlay);
+
+    // Đóng ảnh khi click overlay
+    overlay.onclick = function() {
+        document.body.removeChild(overlay);
+    };
 }
 function showLoginMessage() {
     alert("3AE STORE XIN CHÀO");

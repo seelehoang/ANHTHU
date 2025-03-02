@@ -223,3 +223,30 @@ button:hover {
         text-align: center;
     }
 }
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.star {
+    font-size: 22px;
+    color: gray;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.star:hover,
+.star.hovered {
+    color: gold;
+}
+
+.star.selected {
+    color: gold;
+}
+
+.rating-text {
+    font-size: 16px;
+    margin-left: 5px;
+}

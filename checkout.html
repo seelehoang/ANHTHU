@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng</title>
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+    <header>
+        <h1>Giỏ hàng của bạn</h1>
+    </header>
+
+    <section id="cart-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Sản phẩm</th>
+                    <th>Giá</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items"></tbody>
+        </table>
+        <div id="cart-total">
+            <h3>Tổng tiền: <span id="total-price">0</span>đ</h3>
+        </div>
+    </section>
+
+    <section id="checkout-form">
+        <h2>Thông tin giao hàng</h2>
+        <form id="order-form">
+            <input type="text" id="name" placeholder="Họ và tên" required>
+            <input type="text" id="phone" placeholder="Số điện thoại" required>
+            <input type="text" id="address" placeholder="Địa chỉ nhận hàng" required>
+
+            <h3>Phương thức thanh toán</h3>
+            <label><input type="radio" name="payment" value="cod" checked> Thanh toán khi nhận hàng</label>
+            <label><input type="radio" name="payment" value="bank"> Chuyển khoản ngân hàng</label>
+            <div class="checkout-buttons">
+                <button id="back-button"onclick="history.back()">⬅ Quay lại</button>
+                <button id="checkout-button">🛒 Thanh toán</button>
+            </div>
+           
+
+        </form>
+    </section>
+
+    <script src="cart.js"></script>
+    
+</body>
+</html>
