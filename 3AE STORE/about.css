@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff4d4d, #191414);
+}
+
+.profile-container {
+    display: flex;
+    gap: 20px;
+}
+
+.profile-card {
+    background: #f8f5f5;
+    color: rgb(11, 10, 10);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-card:hover {
+    transform: scale(1.05);
+}
+
+.profile-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #000000;
+}
+
+.profile-card h2 {
+    margin: 10px 0;
+}
+
+.social-icons {
+    margin: 10px 0;
+}
+
+.social-icons a {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    margin: 0 8px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ffffff;
+}
+
+.contact-btn {
+    background: #e4a333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.contact-btn:hover {
+    background: #000000;
+    transform: scale(1.1);
+}.profile-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #000000;
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-card img:hover {
+    transform: scale(1.2);
+}
+.back-to-home {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #fb6400;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.2);
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.back-to-home:hover {
+    background-color: #000000;
+    transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .back-to-home {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+}
+#contact-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: green;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 1000;
+}
